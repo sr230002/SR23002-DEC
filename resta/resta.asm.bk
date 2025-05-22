@@ -1,0 +1,44 @@
+;Resta de tres enteros
+;Escriba un programa para restar tres enteros, usando sólo registros de 16 bits
+
+section .data
+    num1 dw 9
+    num2 dw 2
+    num3 dw 5
+    msg db "El resultado es: "
+    len equ $ - msg
+    res db 0, 0xA  ; Espacio para el dígito + newline
+
+section .text
+    global _start
+
+_start:
+    ; Realizar la resta
+    mov ax, [num1]
+    mov bx, [num2]
+    mov cx, [num3]
+    sub ax, bx
+    sub ax, cx
+    
+    ; Convertir resultado a ASCII (solo funciona para 0-9)
+    add al, '0'
+    mov [res], al
+    
+    ; Mostrar mensaje
+    mov eax, 4      ; sys_write
+    mov ebx, 1      ; stdout
+    mov ecx, msg    ; mensaje
+    mov edx, len    ; longitud
+    int 0x80
+    
+    ; Mostrar resultado
+    mov eax, 4      ; sys_write
+    mov ebx, 1      ; stdout
+    mov ecx, res    ; resultado
+    mov edx, 2      ; 1 dígito + newline
+    int 0x80
+    
+    ; Salir
+    mov eax, 1
+    mov ebx, 0
+    int 0x80
