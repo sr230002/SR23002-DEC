@@ -58,4 +58,32 @@ Por ejemplo, desde la carpeta resta/:
 ../compile.sh resta.asm
 ```
 
+## 🎯 Propósito de cada ejercicio
 
+### 1. Resta de Tres Enteros (`resta/`)
+**Objetivo:**  
+Implementar un programa en ensamblador que realice la operación de resta con tres números enteros utilizando exclusivamente registros de 16 bits.
+
+**Descripción:**
+- Opera con valores enteros de 16 bits almacenados en memoria
+- Realiza la operación: resultado = n1 - n2 - n3
+- Muestra el resultado formateado en la salida estándar
+- Incluye conversión de número binario a cadena ASCII para visualización
+
+### 2. Multiplicación de Dos Enteros (`multiplicacion/`)
+**Objetivo:**  
+Implementar un programa que ejecute la multiplicación de dos números enteros empleando registros de 8 bits.
+
+**Descripción:**
+- Utiliza registros de 8 bits para operandos y resultado
+- Maneja correctamente el desbordamiento cuando el producto excede 8 bits
+
+### 3. División de Dos Enteros (`division/`)
+**Objetivo:**  
+Implementar un programa que divida dos números enteros utilizando registros de 32 bits, mostrando tanto el cociente como el residuo.
+
+**Descripción:**
+- Opera con valores de 32 bits
+- Implementa la división entera mostrando ambos resultados (cociente y residuo)
+- Incluye rutinas de conversión numérica para visualización
+- Maneja correctamente el registro EDX para divisiones de 32 bits
